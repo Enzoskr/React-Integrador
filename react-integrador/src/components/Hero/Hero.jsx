@@ -13,5 +13,5 @@ export const Hero = () => {
   </HeroContainer>
   )
 }
-
+// nos quedamos en 1:01:39
 export default Hero

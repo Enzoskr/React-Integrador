@@ -3,14 +3,13 @@ import styled from 'styled-components'
 
 // header y todo lo que contiene el header
 export const  NavbarContainerStyled = styled.header`
- position: fixed; /* Agrega esta línea */
-/* Ajusta la posición superior según tus necesidades */
-width: 100%; /* Ajusta el ancho según tus necesidades */
+background-color: var(--primary-color);
+position: fixed;
+width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-
 font-size: 14px;
 
 `
@@ -88,8 +87,9 @@ justify-content: center;
 export const UlNavbar = styled.ul`
 display: flex;
 flex-direction: row;
-gap: 20px;
-padding-left: none;
+padding: 0 10px;
+gap: 10px;
+
 list-style: none;
 a{
     cursor: pointer;
