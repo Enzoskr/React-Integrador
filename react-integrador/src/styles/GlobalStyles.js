@@ -38,4 +38,7 @@ li{
     list-style: none;
 }
 
+main h2{
+    padding-left: 20px;
+}
 `

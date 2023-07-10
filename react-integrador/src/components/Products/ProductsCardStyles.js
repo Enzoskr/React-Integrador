@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
 export const ProductsWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
     
-    max-width: 1200px;
-    margin: 0 15px;
     color: var(--text-color-black);
     @media(max-width: 768px){
-        
         text-align: center;
     }
 `;
@@ -19,29 +14,42 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: center;
 gap: 15px;
-margin-top: 40px;
 max-width: 1200px;
+margin: 0 auto;
+/* background-color: red; */
 
 `
 
 export const ProductsCard = styled.div`
 background: var(--color-cards);
 padding: 20px;
-width: 250px;
-border-radius: 10px;
-justify-content: center;
+width: 300px;
+border-radius: 12px;
 display: flex;
 flex-direction: column;
+justify-content: center;
+margin-bottom: 20px;
 gap: 20px;
-img{
-    border-radius: 10px;
-    height: 280px;
-    max-width: 500px;
+
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+transition: all 0.3s ease-in-out;
+&:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
-h3{
-    font-weight: 400;
-    margin: 0;
-}p{
+img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+
+
+}
+
+
+p{
     color: var(--ColorLogo1);
     font-size: 12px;
 
@@ -59,5 +67,15 @@ justify-content: space-between;
 export const CardPrice = styled.div`
 font-weight: 800;
 font-size: 18px;
-background: var(--colorLogo1);
+color: var(--colorLogo1);
+`
+
+export const ContainerInfo = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: flex-start; 
+flex-direction: column;
+padding: 0 10px;
+height: 100%;
+
 `

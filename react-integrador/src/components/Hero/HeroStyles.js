@@ -4,15 +4,14 @@ import PhotoBg from '../../assets/Patagloria.jpg'
 export const HeroContainer = styled.section`
 display: flex;
 justify-content: space-around;
-background-image: 'url(${PhotoBg})';
 margin: 0 auto;
 gap: 20px;
 background-image : url(${PhotoBg});
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-attachment: local;
+width: 100%;
+height: 100%;
+background-position: center;
+background-size: cover;
+background-attachment: local;
 @media (max-width: 768px){
     flex-direction:column;
 }

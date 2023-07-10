@@ -1,12 +1,18 @@
 import React from 'react'
-import {CategoriesCard, CategoriesContainer, CategoriesWrapper } from './CategoriesStyles'
-import {categories} from '../../data/Categories'
+
+import { CategoriesContainer, CategoriesWrapper } from './CategoriesStyles'
+
 import Category from './Category';
+import { useSelector } from 'react-redux';
 
 const Categories = () => {
+
+  const categories = useSelector((state) => state.categories.categories);
+
+
   return (
   <CategoriesWrapper>
-    <h2>Categorias</h2>
+    
     <CategoriesContainer>
       {
         categories.map((category) => {

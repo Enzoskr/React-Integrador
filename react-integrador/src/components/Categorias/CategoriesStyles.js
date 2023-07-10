@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const CategoriesWrapper = styled.div`
 display: flex;
 flex-direction: column;
-max-width: 1200px;
+max-width: 1500px;
 margin: 0 15px;
 @media (max-width: 768px)
 {
@@ -15,12 +15,12 @@ margin: 0 15px;
 export const CategoriesContainer= styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
-gap: 12px 12px;`
+gap: 12px 20px;`
 
 export const CategoriesCard = styled(motion.div)`
-background-color: var(--colorLogo1);
+/* background-color: var(--colorLogo1); */
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -29,9 +29,10 @@ padding: 0 4px;
 
 border-radius: 6px;
 cursor: pointer;
-h2{
+h3{
     font-size: 14px;
 }
+background-color: ${({selected}) => selected ? 'var(--colorLogo2)' : 'var(--colorLogo1)'};;
 `
 export const CategoriesImg = styled.img`
 

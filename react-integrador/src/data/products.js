@@ -102,7 +102,7 @@ export const products = [
         img:'https://i.ebayimg.com/images/g/X0IAAOSwxjxkAnpy/s-l1600.jpg',
         price:40000,
         desc:'Vans',
-        category:'zapatillas',
+        category:'Zapatillas',
     },
     {
         id:14,
@@ -162,19 +162,19 @@ export const products = [
     },
     {
         id:21,
-        name:'',
+        name:'air max 97 silver bullet ',
         img:'https://d2r9epyceweg5n.cloudfront.net/stores/001/074/983/products/e9b4419f-3916-4418-95b2-a1bb2a05896c-9c55b321402a46dd2216415791294549-1024-1024.jpeg',
-        price:'',
+        price:'80000',
         desc:'Nike',
-        category:'',
+        category:'Zapatillas',
     },
     {
         id:22,
-        name:'',
+        name:'anorak nike swoosh',
         img:'https://http2.mlstatic.com/D_NQ_NP_634259-MLA69667832371_052023-O.webp',
-        price:'',
+        price:'74000',
         desc:'Nike',
-        category:'',
+        category:'hoodie',
     },
     {
         id:23,
@@ -221,7 +221,20 @@ export const products = [
         img:'https://bricksneakers.ro/wp-content/uploads/2021/11/1-87.jpg',
         price:111000,
         desc:'Adidas Yeezy',
-        category:'zapatillas',
+        category:'Zapatillas',
     }
     
 ]
+
+export const TotalProducts = products.length;
+
+export const Products = products.reduce((acc, product) => {
+    if (!acc[product.category]) {
+        acc[product.category] = [];
+    }
+    
+    acc[product.category] = [...acc[product.category], product];
+    
+    return acc;
+}, {});
+
