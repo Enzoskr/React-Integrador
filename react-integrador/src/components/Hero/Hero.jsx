@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroContainer, HeroTagline, BackgroundHeroStyles } from './HeroStyles'
+import { HeroContainer, HeroTagline } from './HeroStyles'
 import PhotoBg from '../../assets/Patagloria.jpg'
 
 export const Hero = () => {

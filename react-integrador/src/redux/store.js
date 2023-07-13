@@ -5,12 +5,13 @@ import persistStore from 'redux-persist/lib/persistStore';
 
 import categoriesReducer from './categories/categoriesSlice';
 import productsReducer from './products/productsSlice';
-
+import recommendedReducer from './recommended/recommendedSlice';
 
 
 const reducers = combineReducers({
     categories: categoriesReducer,
     products: productsReducer,
+    recommended: recommendedReducer,
     
 });
 

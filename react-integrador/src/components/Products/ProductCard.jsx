@@ -1,11 +1,13 @@
 import React from 'react'
-
+import Button from '../UI/Button/Button'
 import { 
   CardPrice,
   ContainerPrice,
   ProductsCard,
   ContainerInfo }
   from './ProductsCardStyles'
+  import {formatPrice} from '../../utils/formatPrice'
+
 
   const ProductCard = ({img, name, desc, price}) => {
     return (
@@ -16,8 +18,8 @@ import {
         <p>{desc}</p>
         </ContainerInfo>
         <ContainerPrice>
-          <CardPrice>${price}</CardPrice>
-          <button>Comprar</button>
+          <CardPrice>{formatPrice(price)}</CardPrice>
+          <Button onClick={e => e.preventDefault()}>Add</Button>
           </ContainerPrice>
     </ProductsCard>
   )

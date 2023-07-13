@@ -1,16 +1,18 @@
 import React from "react";
+import Hero from '../../components/Hero/Hero'
 
 import Categorias from '../../components/Categorias/Categorias'
 import ProductsCard from '../../components/Products/ProductsCard'
-
-import Hero from '../../components/Hero/Hero'
-
+import CardsRecommended from "../../components/Recomendados/CardsRecommended";
+import LoginContainer  from "../../components/Login/Login";
 
 import {
     HomeWrapper,
     CategoriasWrapper,
-    ProductosWrapper
+    ProductosWrapper,
+    RecommendedWrapper,
 } from './HomeStyles'
+
 
 function Home(){
     return(
@@ -19,6 +21,12 @@ function Home(){
             {/* hero section */}
             
             <Hero />
+            {/* section Recommendados */}
+            <RecommendedWrapper>
+                <h2>Recomendados</h2>
+            <CardsRecommended/>
+
+            </RecommendedWrapper>
 
             {/* sectionCategorias */}
             <CategoriasWrapper>
@@ -31,6 +39,12 @@ function Home(){
                 <h2>Nuestros productos</h2>
                  <ProductsCard />
             </ProductosWrapper>
+
+            {/* section login */}
+            <LoginContainer>
+
+
+            </LoginContainer>
             
 
             

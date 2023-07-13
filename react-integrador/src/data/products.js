@@ -138,7 +138,7 @@ export const products = [
     },
     {
         id:18,
-        name:'',
+        name:'Camisa Oversize Aqua',
         img:'https://d3ugyf2ht6aenh.cloudfront.net/stores/379/691/products/camisa-aqua-frente1-7b72f751a968dc277316726724283422-480-0.webp',
         price:7000,
         desc:'Estanislao',

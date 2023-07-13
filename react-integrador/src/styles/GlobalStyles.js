@@ -8,8 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     --color-cards: #dee2e6;
 
     /* colores blancos y negros */
-    --text-color-black:#000;
-    --blanco: #;
+    --text-color-black:#000000;
+    --blanco:#fff;
     --Gris:#e0e1dd;
     --lines: #0000001c;
 
@@ -40,5 +40,9 @@ li{
 
 main h2{
     padding-left: 20px;
+    @media (max-width: 768px){
+    font-size: 18px;
+    padding-left: 10px;
+}
 }
 `

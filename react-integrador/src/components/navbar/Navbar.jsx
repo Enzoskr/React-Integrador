@@ -1,5 +1,5 @@
 import React from 'react'
-import { LinkContainerStyled, LinksContainerStyled, NavbarContainerStyled, LogoContainer, ListNavbar, UlNavbar } from './NavbarStyles'
+import { LinkContainerStyled, LinksContainerStyled, NavbarContainerStyled, LogoContainer, ListNavbar, UlNavbar, LiNavbar } from './NavbarStyles'
 import {AiOutlineShopping} from 'react-icons/ai'
 import {AiOutlineSearch} from 'react-icons/ai'
 import LogoBranding from '../../assets/Logo.png'
@@ -11,9 +11,9 @@ const navbar = () => {
     <NavbarContainerStyled>
       <ListNavbar>
         <UlNavbar>
-          <li><a> New in</a></li>
-          <li><a> Shop</a></li>
-          <li><a> Contact Us</a></li>
+          <LiNavbar><a> New in</a></LiNavbar>
+          <LiNavbar><a> Shop</a></LiNavbar>
+          <LiNavbar><a> Contact Us</a></LiNavbar>
         </UlNavbar>
       </ListNavbar>
       
@@ -33,7 +33,9 @@ const navbar = () => {
         </a>
         </LinkContainerStyled>
       </LinksContainerStyled>
+      
     </NavbarContainerStyled>
+    
 
   )
 }

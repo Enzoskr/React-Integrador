@@ -24,6 +24,8 @@ export const ProductsCard = styled.div`
 background: var(--color-cards);
 padding: 20px;
 width: 300px;
+height: 400px;
+
 border-radius: 12px;
 display: flex;
 flex-direction: column;
@@ -38,12 +40,14 @@ transition: all 0.3s ease-in-out;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 img{
-    width: 80%;
-    height: 50%;
+    
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 10px;
     margin: 0 auto;
+    padding-bottom: 10px;
+
 
 
 }

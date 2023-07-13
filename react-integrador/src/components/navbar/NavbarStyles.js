@@ -12,6 +12,7 @@ align-items: center;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
 font-size: 14px;
 
+
 `
 // contenedor de los icons y sus palabras
 export const LinksContainerStyled = styled.div`
@@ -98,4 +99,24 @@ a:hover{
     text-decoration: underline 1.5px solid gray;
     
 }
+
+`
+
+export const LiNavbar = styled.li`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 10px;
+a{
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline 1.5px solid gray;
+}
+`
+export const SearchContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
 `

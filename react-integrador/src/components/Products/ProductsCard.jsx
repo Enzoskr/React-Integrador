@@ -2,7 +2,7 @@ import React from 'react'
 
 import ProductCard from './ProductCard'
 
-import { products } from '../../data/products'
+
 import { Productscontainer } from './ProductsCardStyles'
 import { useSelector } from 'react-redux'
 
