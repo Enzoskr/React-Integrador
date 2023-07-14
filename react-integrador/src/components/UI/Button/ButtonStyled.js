@@ -13,7 +13,7 @@ box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:6px 20px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #cc9f52;    
 	

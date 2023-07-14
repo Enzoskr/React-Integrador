@@ -6,7 +6,8 @@ const Footer = () => {
     <FooterContainerStyled>
             <FooterInnerText>
             "Patagloria es el eco eterno que me guía en cada paso de la vida."
-            <img src="https://media.istockphoto.com/id/864398528/es/foto/patagonia-argentina-e-chilena.jpg?s=170667a&w=0&k=20&c=cRO7HfPdCPDBgPinSqiudYp1vbv3CydipZlqu7GyRM4=" />
+            <img src="https://media.istockphoto.com/id/864398528/es/foto/patagonia-argentina-e-chilena.jpg?s=170667a&w=0&k=20&c=cRO7HfPdCPDBgPinSqiudYp1vbv3CydipZlqu7GyRM4="
+            alt='photoFooter'/>
             </FooterInnerText>
             <FooterHelpStyled>
               <FooterUlStyled>necesitas ayuda?

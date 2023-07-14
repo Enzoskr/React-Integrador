@@ -18,8 +18,8 @@ export const Card = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 10px;
-padding: 8px 8px;
+gap: 30px;
+padding: 0 10px;
 border-radius: 1rem;
 background-color: antiquewhite;
 transition: all 0.3s ease-in-out;
@@ -39,7 +39,7 @@ height: 70px;
 border-radius: 0.5rem;
 object-fit: cover;
 transition: all 0.3s ease-in-out;
-padding-left: 20px;
+
 
 
 `

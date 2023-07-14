@@ -1,5 +1,5 @@
 import React from 'react'
-import { InfoLogin, LoginContainer, LoginQuestion, Loginbtns } from './LoginStyles'
+import { InfoLogin, LoginContainer,Loginbtns } from './LoginStyles'
 import Button from '../UI/Button/Button'
 
 const Login = () => {

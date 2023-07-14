@@ -1,5 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled,{css} from 'styled-components';
+import { motion } from 'framer-motion';
+
+
 
 // header y todo lo que contiene el header
 export const  NavbarContainerStyled = styled.header`
@@ -11,17 +13,38 @@ justify-content: space-between;
 align-items: center;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
 font-size: 14px;
+img{
+    align-items: center;
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+}
 
 
 `
+export const ModalOverlayStyled = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: calc(100vw - 450px);
+  height: 100vh;
+
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      backdrop-filter: blur(4px);
+    `}
+`;
+
 // contenedor de los icons y sus palabras
 export const LinksContainerStyled = styled.div`
 color: black;
 display: flex;
 align-items: center;
 justify-content: center;
-
-/* gap: 20px; */
+gap: 20px;
+font-size: 18px;
 a{
     padding: 0px 10px;
     cursor: pointer;
@@ -49,14 +72,33 @@ cursor: pointer;
 `
 
 export const LinkContainerStyled = styled.div`
-font-size:14px;
-color: ${(props) => (props.icons ? 'black' : 'lightblue')};
+font-size:18px;
+padding-right: 20px;
+
 align-items: center;
-
+a{
+    padding: 0px 10px;
+    cursor: pointer;
+    color: black;
+}
 `
-
-export const UserContainerStyled = styled(LinkContainerStyled)`
-display: flex;
+export const CartNavStyled = styled.div`
+position: relative;
+cursor: pointer;
+span{
+    position: fixed;
+    top: 4px;
+    right: 9px;
+    height: 13px;
+    width: 12px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    
+}
 `
 
 export const ContainerStyled = styled(LinkContainerStyled)`
@@ -120,3 +162,13 @@ display: flex;
 flex-direction: row;
 align-items: center;
 `
+
+export const SearchIcon = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 10px;
+cursor: pointer;
+`
+export const SearchInput = styled.input``

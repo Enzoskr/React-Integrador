@@ -30,9 +30,7 @@ body{
     
     
 }
-h1{
-    color: black
-}
+
 
 li{
     list-style: none;
@@ -42,7 +40,10 @@ main h2{
     padding-left: 20px;
     @media (max-width: 768px){
     font-size: 18px;
-    padding-left: 10px;
+    padding-left: 10px;}
 }
+main a{
+    color: var(--text-color-black);
+    text-decoration: none;
 }
 `

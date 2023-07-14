@@ -1,43 +1,63 @@
-import React from 'react'
-import { LinkContainerStyled, LinksContainerStyled, NavbarContainerStyled, LogoContainer, ListNavbar, UlNavbar, LiNavbar } from './NavbarStyles'
+import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
 import {AiOutlineShopping} from 'react-icons/ai'
-import {AiOutlineSearch} from 'react-icons/ai'
+
+
 import LogoBranding from '../../assets/Logo.png'
 
 
+import {
+    CartNavStyled,
+  LinkContainerStyled,
+   LinksContainerStyled,
+   NavbarContainerStyled,
+   SearchIcon,
+   
+   
+   
+   
+  } from './NavbarStyles'
 
-const navbar = () => {
+  import ListNavbar from './ListNavbar/ListNavbar'
+  import ModalCart from './Cart/ModalCart'
+  import CartIcon from './CartIcon/CartIcon';
+import Search from './Search/Search';
+
+
+ function Navbar() {
+const [hiddenCart, setHiddenCart] = useState(true);
+
+
   return (
     <NavbarContainerStyled>
-      <ListNavbar>
-        <UlNavbar>
-          <LiNavbar><a> New in</a></LiNavbar>
-          <LiNavbar><a> Shop</a></LiNavbar>
-          <LiNavbar><a> Contact Us</a></LiNavbar>
-        </UlNavbar>
-      </ListNavbar>
+      <ModalCart hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
       
-       <LogoContainer src={LogoBranding} alt="Logo-marca" />
+      <ListNavbar/>
+      <Link to='/'>
+        <img src={LogoBranding} alt="Logo-marca" />
+      </Link>
+      {/* {cualquier cosa que pase lo limpio} */}
+      {/* <LogoContainer src={LogoBranding} alt="Logo-marca" /> */}
     
       <LinksContainerStyled>
-        <a href="#">
-        <LinkContainerStyled icons>
-        <AiOutlineShopping/>
-        </LinkContainerStyled>
-        <p>Cart</p>
-      </a>
-      <LinkContainerStyled>
-      <a href="#">
-        <AiOutlineSearch/>
-        <p>Search </p>
-        </a>
-        </LinkContainerStyled>
+      <Search/>
+
+
+      
+      <CartNavStyled>
+        <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart}/>
+      </CartNavStyled>
+
+    
+
       </LinksContainerStyled>
       
     </NavbarContainerStyled>
     
 
-  )
+  );
 }
 
-export default navbar
+export default Navbar;
