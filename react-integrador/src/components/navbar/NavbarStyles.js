@@ -158,9 +158,11 @@ a:hover{
 }
 `
 export const SearchContainer = styled.div`
+position: relative;
 display: flex;
 flex-direction: row;
 align-items: center;
+cursor: pointer;
 `
 
 export const SearchIcon = styled.div`
@@ -171,4 +173,5 @@ justify-content: center;
 gap: 10px;
 cursor: pointer;
 `
-export const SearchInput = styled.input``
+export const SearchInput = styled.input`
+`

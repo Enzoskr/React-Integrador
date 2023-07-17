@@ -3,12 +3,11 @@ import styled from 'styled-components'
 export const FooterContainerStyled = styled.footer`
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-between;
 margin: 0 15px auto;
 margin-top: 40px;
 border-top: 3px solid var(--lines);
-gap: 20px;
-padding: 40px;
+padding: 0 40px;
 
 `
 export const FooterInnerText = styled.p`
@@ -19,11 +18,9 @@ font-weight: 400;
 line-height: 1.5;
 max-width: 33%;
 img{
-    width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
-    height: 200px;
-    padding: 20px 0;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
 }
 
 `

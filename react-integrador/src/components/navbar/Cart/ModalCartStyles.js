@@ -15,14 +15,16 @@ export const ContainerStyled = styled(motion.div)`
   width: 400px;
   height: calc(100vh - 4rem);
 
-  padding: 2rem;
+  padding: 10px 20px 20px 20px;
   background-color: #14213d;
   
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
 `;
 
 export const CloseButtonContainerStyled = styled.div`
-  height: 32px;
+display: flex;
+
+justify-content: flex-end;
 `;
 
 export const CloseButtonStyled = styled(motion.button)`
@@ -34,7 +36,7 @@ export const CloseButtonStyled = styled(motion.button)`
   outline: none;
   border: none;
   border-radius: 10px;
-  background: var(--btn-gradient);
+  background: red;
   color: white;
   cursor: pointer;
 `;

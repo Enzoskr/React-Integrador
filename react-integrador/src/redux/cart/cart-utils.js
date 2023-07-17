@@ -14,7 +14,7 @@ export const addToCart = (cartItems, product) => {
 
 }
 
-export const removeItemFormCart = (cartItems, id) =>{
+export const removeItemFromCart = (cartItems, id) =>{
 
     const ProductToRemove = cartItems.find((item) =>{
         return item.id === id;

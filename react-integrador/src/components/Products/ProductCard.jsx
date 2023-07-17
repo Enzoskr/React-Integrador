@@ -7,9 +7,14 @@ import {
   ContainerInfo }
   from './ProductsCardStyles'
   import {formatPrice} from '../../utils/formatPrice'
+import { useDispatch } from 'react-redux'
+import { AddToCart } from '../../redux/cart/cartSlice'
 
 
-  const ProductCard = ({img, name, desc, price}) => {
+  const ProductCard = ({id, img, name, desc, price}) => {
+
+    const dispatch = useDispatch()
+
     return (
     <ProductsCard>
       <img src={img} alt={name} />
@@ -19,7 +24,8 @@ import {
         </ContainerInfo>
         <ContainerPrice>
           <CardPrice>{formatPrice(price)}</CardPrice>
-          <Button onClick={e => e.preventDefault()}>Add</Button>
+          <Button onClick={() => dispatch(AddToCart({id, 
+            img, name, desc, price}))}>Add</Button>
           </ContainerPrice>
     </ProductsCard>
   )

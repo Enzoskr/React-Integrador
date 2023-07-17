@@ -10,7 +10,9 @@ import { useSelector } from 'react-redux'
 const ProductsCard = () => {
 
   const products = useSelector(state => state.products.products)
+  const selectedCategory = useSelector(state => state.categories.selectedCategory)
   
+
   return (
     <>
       <Productscontainer>

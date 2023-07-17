@@ -3,6 +3,7 @@ import { formatPrice } from '../../../utils';
 
 import { BsPlusLg } from 'react-icons/bs';
 import { FaMinus } from 'react-icons/fa';
+import { BsTrash3 } from 'react-icons/bs';
 
 import Count from '../../UI/Count/Count';
 import Increase from '../../UI/Increase/Increased';
@@ -15,28 +16,34 @@ import {
   PriceStyled,
   QuantityContainerStyled,
 } from './ModalCartStyles';
+import { AddToCart, removeFromCart } from '../../../redux/cart/cartSlice';
+import { useDispatch } from 'react-redux';
 
-const ModalCartCard = () => {
+const ModalCartCard = ({img, name, desc, id, quantity, price}) => {
+  const dispatch = useDispatch()
+  
   return (
     <ProductContainerStyled>
       <img
-        src='https://d3ugyf2ht6aenh.cloudfront.net/stores/001/214/418/products/1-838077-0101-3f1e6a31eba9bb334b15907762078021-640-0.jpg'
-        alt='Nike Dri Fit'
+        src={img}
+        alt={name}
       />
       <TextContainerStyled>
-        <CardTitleStyled>Termica nike dri fit</CardTitleStyled>
-        <TextStyled>Nike</TextStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <CardTitleStyled>{name}</CardTitleStyled>
+        <TextStyled>{desc}</TextStyled>
+        <PriceStyled>{formatPrice(price)}</PriceStyled>
       </TextContainerStyled>
       <QuantityContainerStyled>
         <Increase
           bgColor='var(--btn-gradient-secondary)'
-          onClick={e => e.preventDefault()}
+          onClick={() => dispatch(removeFromCart(id))}
         >
-          <FaMinus />
+          {quantity === 1 ? <BsTrash3/> : <FaMinus />}
+        
         </Increase>
-        <Count>3</Count>
-        <Increase onClick={e => e.preventDefault()}>
+        <Count>{quantity}</Count>
+        <Increase onClick={() => dispatch(AddToCart(
+          {img, name, desc, id, quantity, price}))}>
           <BsPlusLg />
         </Increase>
       </QuantityContainerStyled>

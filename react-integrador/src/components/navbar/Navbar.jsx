@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-import {AiOutlineShopping} from 'react-icons/ai'
 
 
 import LogoBranding from '../../assets/Logo.png'
@@ -10,10 +8,10 @@ import LogoBranding from '../../assets/Logo.png'
 
 import {
     CartNavStyled,
-  LinkContainerStyled,
+  
    LinksContainerStyled,
    NavbarContainerStyled,
-   SearchIcon,
+  //  SearchIcon,
    
    
    
@@ -27,12 +25,12 @@ import Search from './Search/Search';
 
 
  function Navbar() {
-const [hiddenCart, setHiddenCart] = useState(true);
+
 
 
   return (
     <NavbarContainerStyled>
-      <ModalCart hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
+      <ModalCart />
       
       <ListNavbar/>
       <Link to='/'>
@@ -47,8 +45,10 @@ const [hiddenCart, setHiddenCart] = useState(true);
 
       
       <CartNavStyled>
-        <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart}/>
+        <CartIcon/>
       </CartNavStyled>
+
+      
 
     
 

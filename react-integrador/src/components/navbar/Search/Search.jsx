@@ -1,10 +1,12 @@
 import React from 'react'
 import { SearchContainer } from '../NavbarStyles'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { SearchCartHidden } from '../../../redux/cart/cartSlice'
 
-const Search = () => {
+
+const Search = (H) => {
   return (
-    <SearchContainer>
+    <SearchContainer onClick={() => SearchCartHidden}>
         <AiOutlineSearch/>
     </SearchContainer>
   )

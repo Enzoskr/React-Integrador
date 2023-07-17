@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 export const CategoriesWrapper = styled.div`
 display: flex;
 flex-direction: column;
-max-width: 1500px;
-margin: 0 15px;
+
+
 @media (max-width: 768px)
 {
     padding-top:20px;
