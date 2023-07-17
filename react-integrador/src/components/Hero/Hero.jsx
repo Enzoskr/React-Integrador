@@ -33,8 +33,8 @@ const Hero = ({doScroll}) => {
     
   const newCategory = value.trim().toLowerCase().split(" ").join("");
 
-  const selectedCategory = listOfCategories.find((category) => {
-    return category.toLowerCase() === newCategory
+  const selectedCategory = listOfCategories.find((categories) => {
+    return categories.toLowerCase() === newCategory
   });
   
 

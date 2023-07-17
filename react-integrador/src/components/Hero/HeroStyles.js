@@ -73,10 +73,7 @@ text-align: center;
 `
 
 export const IconStyles = styled.div`
-position: absolute;
-top: 12px;
-left: 12px;
-font-size: 1.1rem;
+
 `
 
 export const SearchAndButton = styled.div`
@@ -86,7 +83,5 @@ justify-content: center;
 gap:20px
 `
 
-export const Button = styled.button`
-text-decoration: double 2px;
-`
+
 

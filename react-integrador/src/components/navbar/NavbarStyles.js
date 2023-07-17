@@ -1,5 +1,6 @@
 import styled,{css} from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 
@@ -173,5 +174,28 @@ justify-content: center;
 gap: 10px;
 cursor: pointer;
 `
-export const SearchInput = styled.input`
+export const UserNavStyled = styled.div`
+gap: 10px;
+cursor: pointer;
+span{
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+`
+export const UserContainerStyled = styled(LinkContainerStyled)`
+display: flex;
+align-items: center;
+background-color: var(--Gris);
+padding: 1rem;
+
+span{}
+`;
+
+export const SpanStyled = styled.span`
+&:hover{
+    text-decoration: underline 1px solid black;
+}
+
 `

@@ -1,6 +1,7 @@
 import React from 'react';
 // import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom'
 
 
 import LogoBranding from '../../assets/Logo.png'
@@ -11,6 +12,9 @@ import {
   
    LinksContainerStyled,
    NavbarContainerStyled,
+   SpanStyled,
+   UserContainerStyled,
+   UserNavStyled,
   //  SearchIcon,
    
    
@@ -25,33 +29,31 @@ import Search from './Search/Search';
 
 
  function Navbar() {
-
-
-
+  
+  const navigate = useNavigate(); 
   return (
     <NavbarContainerStyled>
-      <ModalCart />
+      
       
       <ListNavbar/>
-      <Link to='/'>
+      <Link to= '/' >
         <img src={LogoBranding} alt="Logo-marca" />
       </Link>
       {/* {cualquier cosa que pase lo limpio} */}
       {/* <LogoContainer src={LogoBranding} alt="Logo-marca" /> */}
     
       <LinksContainerStyled>
-      <Search/>
+       <UserNavStyled>
+        <UserContainerStyled onClick={() => navigate('/register')} >
+          <SpanStyled>Inicia Sesion</SpanStyled>
+        </UserContainerStyled>
+      </UserNavStyled>
 
 
       
       <CartNavStyled>
         <CartIcon/>
       </CartNavStyled>
-
-      
-
-    
-
       </LinksContainerStyled>
       
     </NavbarContainerStyled>
