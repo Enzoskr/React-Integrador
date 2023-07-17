@@ -4,30 +4,26 @@ import { categories } from "../../data/Categories";
 const INITIAL_STATE = {
     categories: categories,
     selectedCategory: null,
-}
+};  
 
  
 export const categoriesSlice = createSlice({
     name: 'categories',
     initialState: INITIAL_STATE,
     reducers: {
-        getCategories: state => {
+        getCategories: (state) => {
             return state; 
         },
-        selectedCategory: (state, action) => {
-            return{
+        selectCategory: (state, action) => {
+            return {
                 ...state,
                 selectedCategory: 
-                action.payload!== state.selectedCategory ?
-                action.payload : null,
-
-
-            }
-
-        }
+                action.payload !== state.selectedCategory ? action.payload : null,
+            };
+        },
     }, 
 });
 
-export const { getCategories } = categoriesSlice.actions;
+export const { getCategories, selectCategory } = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;

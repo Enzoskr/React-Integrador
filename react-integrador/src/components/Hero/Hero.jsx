@@ -1,17 +1,75 @@
-import React from 'react'
-import { HeroContainer, HeroTagline } from './HeroStyles'
-import PhotoBg from '../../assets/Patagloria.jpg'
+ import PhotoBg from '../../assets/Patagloria.jpg'
+import React, { useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai'
+import {useDispatch, useSelector} from 'react-redux'
 
-export const Hero = () => {
+
+import Button from '../UI/Button/Button'
+
+import {
+  ContainerSearch,
+  HeroContainer,
+  HeroTagline,
+  SearchText,
+  SearchBar,
+  IconStyles,
+  SearchAndButton,
+ } from './HeroStyles'
+
+ import {selectCategory} from "../../redux/categories/categoriesSlice"
+
+const Hero = ({doScroll}) => {
+  
+  const dispatch = useDispatch();
+
+  const [value, setValue] = useState("");
+
+  const listOfCategories = useSelector((state) => state.categories.categories).map((category) => {
+    return category.category
+    });
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+    
+  const newCategory = value.trim().toLowerCase().split(" ").join("");
+
+  const selectedCategory = listOfCategories.find((category) => {
+    return category.toLowerCase() === newCategory
+  });
+  
+
+    if (selectedCategory) {
+      dispatch(selectCategory(selectedCategory))
+      doScroll();
+    } else {
+      return alert("No se encontraron productos")
+    }
+    
+    setValue("")
+  }
+
   return (
     <HeroContainer img src={PhotoBg} alt="Patagloria" >
       
-      <HeroTagline>
-        Inspiración natural, estilo excepcional
-        </HeroTagline>
-        {/* Vistete con lo mejor */}
+      <HeroTagline>Inspiración natural, estilo excepcional</HeroTagline>
+        <ContainerSearch>
+          <SearchText>¿Qué estás buscando?</SearchText>
+          <SearchAndButton>
+          <SearchBar 
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          type="text"
+          placeholder="Ej. hoddies, remeras,etc" />
+          <IconStyles>
+            <AiOutlineSearch />
+          </IconStyles>
+          <Button onClick={e => handlerSubmit(e)} radius='10' disabled={!value}>      
+            Buscar
+          </Button> 
+          </SearchAndButton>
+        </ContainerSearch>
   </HeroContainer>
   )
 }
 // nos quedamos en 1:01:39
-export default Hero
+export default Hero;
