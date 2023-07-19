@@ -8,7 +8,7 @@ export const ProductsWrapper = styled.div`
     }
 `;
 
-export const Productscontainer = styled.div`
+export const ProductsContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 align-items: center;
@@ -16,7 +16,7 @@ justify-content: center;
 gap: 15px;
 max-width: 1200px;
 margin: 0 auto;
-/* background-color: red; */
+
 
 `
 

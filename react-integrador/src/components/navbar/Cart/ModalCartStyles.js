@@ -6,19 +6,25 @@ export const ContainerStyled = styled(motion.div)`
   top: 0;
   right: 0;
   z-index: 99;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: space-between;
+  
 
-  width: 400px;
+  width: 450px;
   height: calc(100vh - 4rem);
 
-  padding: 10px 20px 20px 20px;
+  padding: 2rem;
   background-color: #14213d;
   
-  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    padding: 60px;
+    right: none;
+      background-color: #14213d;
+
+  }
 `;
 
 export const CloseButtonContainerStyled = styled.div`
@@ -137,6 +143,7 @@ export const PriceStyled = styled.span`
 
 export const PriceContainerStyled = styled.div`
   z-index: 1000;
+  margin-top: 60px;
   
   & p {
     text-align: center;

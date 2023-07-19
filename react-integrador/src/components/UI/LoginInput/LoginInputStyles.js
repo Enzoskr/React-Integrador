@@ -3,15 +3,15 @@ import styled from 'styled-components';
 export const InputContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10px;
 `;
 
 export const LoginInputStyled = styled.input`
   width: 300px;
-  height: 40px;
-  padding: 1.5rem 2rem;
+  padding: 10px;
   color: black;
   background-color: var(--Gris);
-  border-radius: 15px;
+  border-radius: 20px;
   border: ${({ isError }) => (isError ? '1px solid red ' : '#0000001c')};
   
 

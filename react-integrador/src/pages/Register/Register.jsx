@@ -1,28 +1,58 @@
 import React from 'react'
-import { LoginContainerStyled, LoginEmailStyled } from './RegisterStyles'
-import { Link } from 'react-router-dom'
-import LogoBranding from '../../assets/Logo.png'
-import { Form, Formik } from 'formik'
-import LoginInput from '../../components/UI/LoginInput/LoginInput'
+import {Formik } from 'formik';
+
+import { Link, useNavigate } from 'react-router-dom'
 import Submit from '../../components/UI/Submit/Submit'
 
+import {registerInitialValues} from '../../Formik/initialValues'	
+import {registerValidationSchema} from '../../Formik/validationSchema'
+
+
+import LoginInput from '../../components/UI/LoginInput/LoginInput'
+import {
+  LoginContainerStyled,
+  LoginEmailStyled,
+  Form
+} from './RegisterStyles';
+
+import { createUser } from '../../axios/axios-user'
+
+import LogoBranding from '../../assets/Logo.png'
 const Register = () => {
+
+  const navigate = useNavigate()
+
   return (
     <LoginContainerStyled>
        <Link to= '/' >
         <img src={LogoBranding} alt="Logo-marca" />
       </Link>
       <h1>Crea tu cuenta</h1>
-      <Formik>
+      <Formik
+      initialValues={registerInitialValues}
+      validationSchema={registerValidationSchema}
+      onSubmit={ async (values, actions) => {
+        const user = await createUser(values.name, values.email, values.password)
+        actions.resetForm();
+        if(user){
+          navigate('/login')
+
+        }
+      }}
+      
+      >
         <Form>
-          <LoginInput type='text' placeholder='Tu nombre'/>
-          <LoginInput type= 'text' placeholder='Email' />
-          <LoginInput type='password' placeholder='Password' />
+          <LoginInput name="name" type='text' placeholder='Nombre'/>
+          <LoginInput name="email" type='text' placeholder='Email' />
+          <LoginInput name="password" type='password' placeholder='Password' />
 
-          <LoginEmailStyled to='/'>
-            <Submit type='submit'>Create una cuenta si es tu primera vez aqui</Submit>
-
-          </LoginEmailStyled>
+          <LoginEmailStyled to='/login'>
+           <p> Inicia sesión si ya tienes una cuenta</p>
+           </LoginEmailStyled>
+           <Submit type='button'>
+            Registrate
+           </Submit>
+       
 
         </Form>
       </Formik>
@@ -30,4 +60,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register;

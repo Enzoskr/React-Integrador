@@ -30,9 +30,7 @@ const CardRecommended = ({id, name, img, price, desc}) => {
         <InfoCard>{desc}</InfoCard>
         <CardPrice>{formatPrice(price)}</CardPrice>
       </CardText>
-      <Button onClick={() => dispatch(AddToCart({id, 
-            img, name, desc, price}))}>Add</Button>
-
+      <Button onClick={() => dispatch(AddToCart({id, img, name, desc, price}))}>Add</Button>
     </Card>
   )
 }

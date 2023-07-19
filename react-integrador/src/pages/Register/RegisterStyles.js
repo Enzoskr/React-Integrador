@@ -21,6 +21,13 @@ img{
 `
 
 export const LoginEmailStyled = styled(Link)`
+display: flex;
+margin-top: 20px;
+flex-direction: column;
+background-color: var(--bg-metal);
+align-items: center;
+margin: 0 auto;
+
 & p{
     color : var(--colorLogo1);
 }
@@ -33,7 +40,7 @@ export const LoginEmailStyled = styled(Link)`
 `
 export const Form = styled(FormikForm)`
 display: flex;
-padding 0 12px;
+padding: 0 12px;
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 `

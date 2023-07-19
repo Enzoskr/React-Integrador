@@ -5,17 +5,16 @@ export const HeroContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-margin: 0 auto;
-gap: 20px;
+
 background-image : url(${PhotoBg});
 width: 100%;
-height: 750px;
+height: 700px;
 background-position: center;
 background-size: cover;
 background-attachment: local;
 @media (max-width: 768px){
-    flex-direction:column;
-    justify-content:space-between;
+    
+    
 }
 img{
     width: 100%;
@@ -46,14 +45,20 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-start;
 padding: 0 50px;
+
+
 `
 export const SearchBar = styled.input`
-width: 500px;
-height: 50px;
+background-color: var(--primary-color);
 border-radius: 10px;
 border: none;
 outline: none;
 box-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+color: black;
+@media (max-width: 768px){
+    padding: 10px;
+}
+
 `
 
 export const SearchText = styled.h4`
@@ -73,6 +78,13 @@ text-align: center;
 `
 
 export const IconStyles = styled.div`
+position: absolute;
+top:10px;
+left: 10px;
+font-size: 10px;
+
+
+
 
 `
 
@@ -80,7 +92,10 @@ export const SearchAndButton = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
-gap:20px
+gap:20px;
+@media (max-width: 768px){
+    justify-content: flex-start;
+}
 `
 
 

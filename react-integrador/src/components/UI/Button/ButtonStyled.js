@@ -15,7 +15,7 @@ box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	font-weight:bold;
 	padding:6px 20px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #cc9f52;    
+	text-shadow:0px 1px 0px #cc9f52;  
 	
 	&:hover {
 		background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
@@ -23,9 +23,9 @@ box-shadow:inset 0px 1px 0px 0px #fce2c1;
     }
     &:disabled {
         cursor: not-allowed;
-        opacity: 50%;
-		position:relative;
 		top:1px;
+		
+	
 
     }
     

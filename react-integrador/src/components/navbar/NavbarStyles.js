@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom';
 // header y todo lo que contiene el header
 export const  NavbarContainerStyled = styled.header`
 background-color: var(--primary-color);
+height: 48px;
 position: fixed;
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12);
-font-size: 14px;
+
 img{
     align-items: center;
     width: 150px;
@@ -179,16 +180,21 @@ gap: 10px;
 cursor: pointer;
 span{
     color: black;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
 }
-
+::first-letter{
+    text-transform: uppercase;
+}
 `
 export const UserContainerStyled = styled(LinkContainerStyled)`
+height: 15px;
+gap: 12px;
 display: flex;
 align-items: center;
 background-color: var(--Gris);
 padding: 1rem;
+
 
 span{}
 `;

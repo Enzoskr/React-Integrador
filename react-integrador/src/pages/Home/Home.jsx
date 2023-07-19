@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Hero from '../../components/Hero/Hero'
 
 import Categorias from '../../components/Categorias/Categorias'
 import ProductsCard from '../../components/Products/ProductsCard'
 import CardsRecommended from "../../components/Recomendados/CardsRecommended";
-import LoginContainer  from "../../components/Login/Login";
+
 
 import {
     HomeWrapper,
@@ -15,12 +15,20 @@ import {
 
 
 function Home(){
+    const productsRef = useRef()
+
+    const doScroll = () => {
+        window.scrollTo(
+            productsRef.current.getBoundingClientRect().x,
+            productsRef.current.getBoundingClientRect().y,
+        )
+    }
+
     return(
         <HomeWrapper>
-
             {/* hero section */}
             
-            <Hero />
+            <Hero doScroll={doScroll} />
             {/* section Recommendados */}
             <RecommendedWrapper>
                 <h2>Recomendados</h2>
@@ -35,16 +43,13 @@ function Home(){
                 <Categorias />
             </CategoriasWrapper>
             {/* section Productos */}
-            <ProductosWrapper>
+            <ProductosWrapper ref={productsRef}>
                 <h2>Nuestros productos</h2>
                  <ProductsCard />
             </ProductosWrapper>
 
             {/* section login */}
-            <LoginContainer>
-
-
-            </LoginContainer>
+          
             
 
             

@@ -1,4 +1,4 @@
- import PhotoBg from '../../assets/Patagloria.jpg'
+ 
 import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
 import {useDispatch, useSelector} from 'react-redux'
@@ -25,7 +25,7 @@ const Hero = ({doScroll}) => {
   const [value, setValue] = useState("");
 
   const listOfCategories = useSelector((state) => state.categories.categories).map((category) => {
-    return category.category
+    return category.Category
     });
 
   const handlerSubmit = (e) => {
@@ -33,14 +33,14 @@ const Hero = ({doScroll}) => {
     
   const newCategory = value.trim().toLowerCase().split(" ").join("");
 
-  const selectedCategory = listOfCategories.find((categories) => {
-    return categories.toLowerCase() === newCategory
+  const selectedCategory = listOfCategories.find((category) => {
+    return category.toLowerCase() === newCategory
   });
   
 
     if (selectedCategory) {
       dispatch(selectCategory(selectedCategory))
-      doScroll();
+      doScroll(doScroll);
     } else {
       return alert("No se encontraron productos")
     }
@@ -49,8 +49,7 @@ const Hero = ({doScroll}) => {
   }
 
   return (
-    <HeroContainer img src={PhotoBg} alt="Patagloria" >
-      
+    <HeroContainer >
       <HeroTagline>Inspiración natural, estilo excepcional</HeroTagline>
         <ContainerSearch>
           <SearchText>¿Qué estás buscando?</SearchText>

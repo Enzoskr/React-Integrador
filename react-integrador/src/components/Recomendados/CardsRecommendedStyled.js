@@ -1,16 +1,27 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const CardsContainer = styled.div`
 display: grid;
 gap: 20px;
 padding: 1rem;
-grid-template-columns: ${({ gridLength }) => `repeat(${gridLength}, 1fr)`};
+grid-template-columns: ${({ gridlength }) => `repeat(${gridlength}, 1fr)`};
 overflow:  scroll;
 
 
 &::-webkit-scrollbar{
-    height: 4px;
-    width: 4px;
+    height: 6px;
+    width: 5px;
+    background: transparent;
+}
+
+&::-webkit-scrollbar-thumb{
+    background: var(--colorLogo2);
+    border-radius: 6px;
+    opacity: 50%; 
+}
+&::-webkit-scrollbar:vertical{
+  display: none;
+
 }
 `
 
@@ -49,9 +60,7 @@ margin-bottom: 5px;
 font-size: 18px;
 font-weight: 500;
 letter-spacing: 0.05rem;
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
+
 width: 200px;
 :hover{
     
@@ -62,7 +71,7 @@ width: 200px;
  
 `
 
-export const CardText = styled.p`
+export const CardText = styled.div`
 margin: 0;
 margin-bottom: 5px;
 font-weight: 500;
