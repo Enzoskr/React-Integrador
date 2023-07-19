@@ -5,14 +5,18 @@ import Login from '../pages/Login/Login'
 import Checkout from '../pages/Checkout/Checkout'
 import Register from '../pages/Register/Register'
 import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute'
+import Orders from '../pages/Ordenes/Ordenes'
+import Resumen from '../pages/Resumen/Resumen'
 
 function Routes(){
     return(
         <ReactDomRoutes>
             <Route path='/' element={<Home />}/>
             <Route path='/login' element={<Login />}/>
+            <Route path='/register' element={<Register />}/>
             
-            <Route path= '/Register' element={<Register />}/>
+            <Route path= '/Ordenes' element={<Orders/>}/>
+            <Route path= '/resumen' element={<Resumen/>}/> 
             <Route 
             path='/Checkout'
             element ={

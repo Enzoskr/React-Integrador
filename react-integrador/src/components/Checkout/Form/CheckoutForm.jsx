@@ -6,17 +6,43 @@ import { CheckoutDatosStyled, Formik, Form, SubmitBtn } from './CheckoutFormStyl
 
 import {checkoutInitialValues} from "../../../Formik/initialValues"
 import {checkoutValidationSchema} from "../../../Formik/validationSchema"
+import { createOrder } from '../../../axios/axios-orders';
+import { useDispatch, useSelector } from 'react-redux'
+import { clearCart } from '../../../redux/cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
-const CheckoutForm = ({cartItems}) => {
+const CheckoutForm = ({cartItems, price, shippingCost}) => {
+  const dispatch = useDispatch()
+  const {currentUser} = useSelector(state => state.user)
+  // const navigate = useNavigate()
   return (
     <CheckoutDatosStyled>
       <h2>Ingresa tus datos</h2>
       <Formik
       initialValues={checkoutInitialValues}
       validationSchema={checkoutValidationSchema}
-      onSubmit={values => console.log(values)}
+      onSubmit={async( values) => {
+        const orderData = {
+          items : cartItems,
+          price,
+          shippingCost,
+          total: price + shippingCost,
+          shippingDetails: {
+            ...values
+          }
+        }
+        try{
+          await createOrder(orderData, dispatch, currentUser)
+          alert(' felicitaciones, tu pedido fue creado con exito')
+          dispatch(clearCart())
+        } catch (error){
+          alert('hubo un error al crear el pedido')
+
+        }
+
+      }
+    }
       >
-      
       <Form>
         <Input
         htmlFor='nombre'
@@ -34,7 +60,7 @@ const CheckoutForm = ({cartItems}) => {
             placeholder='Tu celular'
             name="cellphone"
           >
-        Celular
+        Telefono
           </Input>
           <Input
             htmlFor='localidad'
