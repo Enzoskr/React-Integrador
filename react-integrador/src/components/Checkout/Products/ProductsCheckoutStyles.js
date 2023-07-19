@@ -6,8 +6,7 @@ export const ProductosContainerStyled = styled.div`
 `;
 
 export const ProductsTitleStyled = styled.h2`
-font-weight: 700;
-font-size: 18px;
+
 `
 export const CardWrapperStyled = styled.div`
 
@@ -46,6 +45,7 @@ overflow: scroll;
 `;
 
 export const PriceContainerStyled = styled.div`
+border-top: 4px solid var(--Gris);
 margin: 0 auto;
 width: 80%;
 margin-top: 10px;

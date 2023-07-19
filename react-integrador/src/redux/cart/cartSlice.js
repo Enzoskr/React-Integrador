@@ -44,14 +44,7 @@ const cartSlice = createSlice({
                 hidden: !state.hidden,
             }
         },
-        SearchHidden: (state) => {
-            return {
-                ...state,
-                hidden: !state.hidden,
-
-            }
-        }
-}
+       },
 });
 
 export const { 
@@ -59,7 +52,7 @@ export const {
     removeFromCart,
     clearCart,
     toggleCartHidden,
-    SearchCartHidden,
+    
 } =
  cartSlice.actions;
 

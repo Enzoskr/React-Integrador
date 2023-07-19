@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const ModalContainerStyled = styled(motion.div)`
   position: absolute;
-  background-color: var(--gray-bg);
+  background-color: #bde0fe;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
   width: 450px;
   top: calc(100px + 2rem);

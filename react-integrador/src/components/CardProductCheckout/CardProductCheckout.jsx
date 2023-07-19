@@ -1,5 +1,7 @@
-import {BsFillTrash3Fill, BsPlusLg} from 'react-icons/bs'
-import { FaMinus} from 'react-icons/fa'
+
+import {FaTrash} from 'react-icons/fa'
+import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+
 
 import { 
     CardContainerStyles,
@@ -35,15 +37,15 @@ const CardProductCheckout = ({img, name, desc, price,id, quantity}) => {
         </CardInfoStyled>
          <QuantityContainerStyles>
             <Increase
-                bgColor='var(--gris)'
+                bgColor='var(--colorLogo2)'
                 onClick={() => dispatch(removeFromCart(id))}
             >
-                {quantity === 1 ? <BsFillTrash3Fill/> : <FaMinus />}
+                {quantity === 1 ? <FaTrash/> : <AiFillMinusCircle />}
 
             </Increase>
             <Count>{quantity}</Count>
             <Increase onClick={() => dispatch(AddToCart({img, name, desc, price, id, quantity}))}>
-                <BsPlusLg />
+                <AiFillPlusCircle />
             </Increase>
             </QuantityContainerStyles>
     </CardContainerStyles>

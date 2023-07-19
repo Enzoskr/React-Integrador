@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-import { MdOutlineClose } from 'react-icons/md';
-import { BsTrash3 } from 'react-icons/bs';
+import { MdClose } from 'react-icons/md';
+import { FaTrash } from 'react-icons/fa';
 import { formatPrice } from '../../../utils';
 
 import Submit from '../../UI/Submit/Submit';
@@ -63,7 +63,7 @@ const ModalCart = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => dispatch(toggleCartHidden())}
               >
-                <MdOutlineClose size='24px' />
+                <MdClose size='30px' />
               </CloseButtonStyled>
             </CloseButtonContainerStyled>
 
@@ -72,10 +72,10 @@ const ModalCart = () => {
                 <h1>Tus Productos</h1>
                 <Increase
                   onClick={() => dispatch(clearCart())}
-                  bgColor='#ff0000'
+                  bgcolor='#ff0000'
                   disabled={!cartItems.length}
                 >
-                  <BsTrash3 color='#f1faee'/>
+                  <FaTrash color='#f1faee'/>
                 </Increase>
               </TitleStyled>
 

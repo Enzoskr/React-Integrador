@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const IncreaseStyled = styled(motion.button)`
+  background: ${({ bgcolor }) => bgcolor || 'var(--colorLogo1)'};
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: ${({ bgColor }) => bgColor || 'var(--btn-gradient)'};
   border: none;
   border-radius: 15px;
-  font-size: 1.1rem;
+  font-size: 24px;
   font-weight: 800;
   color: white;
   cursor: pointer;

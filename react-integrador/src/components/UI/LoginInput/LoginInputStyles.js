@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const InputContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 2px ;
 `;
 
 export const LoginInputStyled = styled.input`
@@ -11,26 +11,14 @@ export const LoginInputStyled = styled.input`
   padding: 10px;
   color: black;
   background-color: var(--Gris);
-  border-radius: 20px;
+  border-radius: 10px;
   border: ${({ isError }) => (isError ? '1px solid red ' : '#0000001c')};
-  
-
-
-  ::placeholder {
-    opacity: 80%;
-  }
   -webkit-text-fill-color: black;
 
-  :-webkit-autofill,
-  :-webkit-autofill:hover,
-  :-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px var(--gray-bg) inset;
-  }
 `;
 
 export const ErrorMessageStyled = styled.p`
-  margin: 0;
-  margin-top: 5px;
-  color: #fb103d;
-  font-size: 14px;
+margin-top: 5px;
+color: #fb103d;
+font-size: 14px;
 `;

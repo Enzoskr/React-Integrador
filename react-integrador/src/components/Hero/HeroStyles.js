@@ -79,9 +79,9 @@ text-align: center;
 
 export const IconStyles = styled.div`
 position: absolute;
-top:10px;
-left: 10px;
-font-size: 10px;
+top:12px;
+left: 12px;
+font-size: 14px;
 
 
 

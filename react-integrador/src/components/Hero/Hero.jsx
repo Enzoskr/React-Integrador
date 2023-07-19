@@ -59,9 +59,7 @@ const Hero = ({doScroll}) => {
           onChange={(e) => setValue(e.target.value)}
           type="text"
           placeholder="Ej. hoddies, remeras,etc" />
-          <IconStyles>
-            <AiOutlineSearch />
-          </IconStyles>
+         
           <Button onClick={e => handlerSubmit(e)} radius='10' disabled={!value}>      
             Buscar
           </Button> 

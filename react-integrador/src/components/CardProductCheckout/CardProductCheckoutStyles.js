@@ -8,9 +8,10 @@ gap: 15px;
 
 width: 85%;
 
-background-color: #faf;
+background-color: var(--Gris);
 box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 border-radius: 5px;	
+border: 2px solid var(--lines);
 padding: 10px;
 height: 85px;
 
@@ -24,6 +25,8 @@ height: 85px;
 
 export const CardInfoStyled = styled.div`
 display: flex;
+white-space: nowrap;
+overflow: hidden;
 flex-direction: column;
 gap: 2px;
 width: 450px;
@@ -31,22 +34,24 @@ width: 450px;
 
 export const ProductNameStyles = styled.h3`
 margin: 0;
-font-weight: 600;
+font-weight: 500;
 margin-bottom: 4px;
+
 
 `
 export const TextStyled = styled.h3`
 margin: 0;
-color: azure;
-font-weight: 500;
+color: black;
+font-weight: 800;
 
 `
 
 
 export const ProductPriceStyles = styled.p`
 margin: 0;
-margin-bottom: 2px;
+
 font-weight: 500;
+color: var(--btn-gradient);
 `
 
 

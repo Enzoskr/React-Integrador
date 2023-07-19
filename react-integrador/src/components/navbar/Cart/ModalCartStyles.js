@@ -29,7 +29,6 @@ export const ContainerStyled = styled(motion.div)`
 
 export const CloseButtonContainerStyled = styled.div`
 display: flex;
-
 justify-content: flex-end;
 `;
 
@@ -40,7 +39,7 @@ export const CloseButtonStyled = styled(motion.button)`
   width: 2rem;
   height: 2rem;
   outline: none;
-  border: none;
+  border: #14213d 3px dashed;
   border-radius: 10px;
   background: red;
   color: white;
@@ -116,7 +115,9 @@ export const TextContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   width: 190px;
 `;
 

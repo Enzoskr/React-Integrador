@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const StyledButton = styled(motion.button)`
@@ -24,9 +24,17 @@ box-shadow:inset 0px 1px 0px 0px #fce2c1;
     &:disabled {
         cursor: not-allowed;
 		top:1px;
-		
-	
-
     }
+	${({ secondary }) =>
+    secondary &&
+    css`
+      background: #252525;
+      & span {
+        background: var(--btn-gradient);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+    `}
     
 `

@@ -3,31 +3,38 @@ export const addToCart = (cartItems, product) => {
         return item.id === product.id;
     });
 
-    if(productInCart){
+    if(productInCart) {
         return cartItems.map((item) => {
-            return item.id === product.id ?
-            {...item, quantity: item.quantity + 1} : item;
+            return item.id === productInCart.id 
+            ? { ...item, quantity: item.quantity + 1 }
+            : item;
         });
         
     }
-    return [...cartItems, {...product, quantity: 1}]; 
+    return [
+        ...cartItems,
+        {
+        ...product,
+        quantity: 1,
+    }
+    ]; 
 
 }
 
-export const removeItemFromCart = (cartItems, id) =>{
+export const removeItemFromCart = (cartItems, id) => {
 
-    const ProductToRemove = cartItems.find((item) =>{
+    const productToRemove = cartItems.find((item) =>{
         return item.id === id;
     })
-    if(ProductToRemove.quantity > 1){
+    if(productToRemove.quantity > 1){
         return cartItems.map((item) => {
-            return item.id === ProductToRemove.id
+            return item.id === productToRemove.id
             ?{ ...item, quantity: item.quantity - 1}
-            :item;
+            : item;
         });
     }
     return cartItems.filter((item) =>{
-            return item.id !== ProductToRemove.id;
+            return item.id !== productToRemove.id;
         })
     }
 

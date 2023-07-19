@@ -2,17 +2,14 @@ import React from 'react';
 import { IncreaseStyled } from './IncreasedStyles';
 
 const Increase = ({
-  children,
-  bgColor,
-  disabled = false,
-  onClick = e => e.preventDefault(),
+  children, bgcolor, disabled = false,onClick = e => e.preventDefault(),
 }) => {
   return (
     <IncreaseStyled
-      whileTap={{ scale: 0.95 }}
-      bgColor={bgColor}
-      disabled={disabled}
+      whileTap={{ scale: 0.7 }}
+      bgcolor={bgcolor}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </IncreaseStyled>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { formatPrice } from '../../../utils';
 
-import { BsPlusLg } from 'react-icons/bs';
-import { FaMinus } from 'react-icons/fa';
-import { BsTrash3 } from 'react-icons/bs';
+import { AiFillPlusCircle } from 'react-icons/ai';
+import { AiFillMinusCircle } from 'react-icons/ai';
+import { FaTrash } from 'react-icons/fa';
 
 import Count from '../../UI/Count/Count';
 import Increase from '../../UI/Increase/Increased';
@@ -35,16 +35,18 @@ const ModalCartCard = ({img, name, desc, id, quantity, price}) => {
       </TextContainerStyled>
       <QuantityContainerStyled>
         <Increase
-          bgColor='var(--btn-gradient-secondary)'
+          bgcolor='var(--colorLogo1)'
           onClick={() => dispatch(removeFromCart(id))}
         >
-          {quantity === 1 ? <BsTrash3/> : <FaMinus />}
+          {quantity === 1 ? <FaTrash/> : <AiFillMinusCircle />}
         
         </Increase>
         <Count>{quantity}</Count>
-        <Increase onClick={() => dispatch(AddToCart(
+        <Increase 
+        bgcolor='var(--colorLogo2)'
+        onClick={() => dispatch(AddToCart(
           {img, name, desc, id, quantity, price}))}>
-          <BsPlusLg />
+          <AiFillPlusCircle />
         </Increase>
       </QuantityContainerStyled>
     </ProductContainerStyled>

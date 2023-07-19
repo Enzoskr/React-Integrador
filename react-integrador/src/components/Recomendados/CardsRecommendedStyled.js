@@ -30,7 +30,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 30px;
-padding: 0 10px;
+padding: 0 20px;
 border-radius: 1rem;
 background-color: antiquewhite;
 transition: all 0.3s ease-in-out;

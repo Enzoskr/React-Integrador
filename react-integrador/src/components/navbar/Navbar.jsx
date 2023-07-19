@@ -43,7 +43,7 @@ import ModalUser from './user/ModalUser';
       <ModalUser/>
       
       
-      <ListNavbar/>
+      
       <Link to= '/' >
         <img src={LogoBranding} alt="Logo-marca" />
       </Link>
