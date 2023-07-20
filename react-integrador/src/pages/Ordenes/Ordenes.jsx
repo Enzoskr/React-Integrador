@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux"
 
 
 import Button from '../../components/UI/Button/Button';
@@ -8,21 +9,19 @@ import CardsMisOrdenes from '../../components/Ordenes/CardsOrdenes';
 import {
   MisOrdenesBtnContainerStyled,
   MisOrdenesContainerStyled,
-  MisOrdenesPatternStyled,
   MisOrdenesTitleStyled,
 } from './OrdenesStyles';
 import { getOrders } from '../../axios/axios-orders';
 import { clearError, fetchOrdersFail } from '../../redux/Orders/orderSlice';
 
-import {useDispatch, useSelector} from "react-redux"
-const Orders = () => {
+
+const MisOrdenes = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const currentUser = useSelector(state => state.user.currentUser)
-  
   const {orders, error} = useSelector(state => state.orders);
-
+  
   useEffect(() => {
     if(!orders) {
       getOrders(dispatch, currentUser)
@@ -44,12 +43,9 @@ const Orders = () => {
           <Button onClick={() => navigate('/')}>Volver a comprar</Button>
         </MisOrdenesBtnContainerStyled>
       </MisOrdenesContainerStyled>
-      <MisOrdenesPatternStyled
-        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648434/coding/NucbaZappi/Assets/Pattern_lt5uru.png'
-        alt=''
-      />
+    
     </>
   );
 };
 
-export default Orders;
+export default MisOrdenes;

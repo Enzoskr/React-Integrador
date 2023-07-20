@@ -19,14 +19,14 @@ const ModalUser = () => {
     <AnimatePresence>
       {!hiddenMenu && (
         <ModalContainerStyled
-          initial={{ translateX: 600 }}
+          initial={{ translateX: 900 }}
           animate={{ translateX: 0 }}
-          exit={{ translateX: 600 }}
-          transition={{ duration: 0.5 }}
+          exit={{ translateX: 900 }}
+          transition={{ duration: 0.9 }}
           key='cart-user'
         >
           <UsernameStyled>{currentUser?.nombre}</UsernameStyled>
-          <HrStyled />
+          
           <LinkStyled to='/Ordenes'>Mis Ordenes</LinkStyled>
           <span onClick={() => {
             dispatch(setCurrentUser(null))

@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ResumenContainerStyled = styled.div`
-  padding: 2rem 7rem;
+  padding: 60px 0;
+  @media (max-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 export const ResumenTitleStyled = styled.div`
@@ -35,17 +39,19 @@ export const ProductsContainerStyled = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   flex-wrap: wrap;
+  border-bottom: 2px solid var(--lines);
+  margin-bottom: 10px;
 `;
 
-export const HrStyled = styled.hr`
-  margin: 4rem 0;
-`;
 
 export const ResumenContainerInfoStyled = styled.div`
   width: 500px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const CostoProductoStyled = styled.div`
@@ -62,7 +68,8 @@ export const CostoEnvioStyled = styled(CostoProductoStyled)`
 
 export const CostoTotalStyled = styled(CostoProductoStyled)`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 20px;
+  border-top: 2px solid var(--lines); ;
+  
   font-weight: bold;
 `;

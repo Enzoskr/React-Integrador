@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { BASE_URL } from '../utils';
 import {
   fetchOrdersStart,
   fetchOrdersSuccess,
@@ -6,14 +7,15 @@ import {
   createOrderFail,
 } from '../redux/Orders/orderSlice';
 
-import { BASE_URL } from '../utils';
+
 
 export const getOrders= async (dispatch, currentUser) =>{
   dispatch(fetchOrdersStart());
 
-  try {
+  try{
     const orders = await axios.get(`${BASE_URL}orders`, {
-      headers: {
+      headers:
+      {
         'x-token': currentUser.token,
       },
     });
@@ -25,17 +27,20 @@ export const getOrders= async (dispatch, currentUser) =>{
     console.log(error);
 
     dispatch(
-      fetchOrdersFail('Algo no salió bien. Sin un usuario registrado, no podemos procesar las órdenes')
+      fetchOrdersFail
+      ('Algo no salió bien. Sin un usuario registrado, no podemos procesar las órdenes')
     );
   }
 };
 
 export const createOrder = async (order, dispatch, currentUser) => {
   try {
-    const response = await axios.post(`${BASE_URL}orders`, order, {
-      headers: {'x-token': currentUser.token,},
+    const response = await axios.post(`${BASE_URL}Orders`, order, {
+      headers: {
+        'x-token': currentUser.token,
+      },
     });
-    if (response){ 
+    if (response) { 
       getOrders(dispatch, currentUser);}
   } catch (error) {
     console.log(error);

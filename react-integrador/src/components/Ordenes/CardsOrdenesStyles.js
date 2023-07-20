@@ -11,9 +11,9 @@ export const MisOrdenesContainerStyled = styled.div`
 `;
 
 export const PedidoContainerStyled = styled.div`
-  background: var(--gray-bg);
+  background: var(--Gris);
   width: 380px;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 1rem 1.4rem;
   display: flex;
   align-items: center;
@@ -35,6 +35,7 @@ export const TitleStyled = styled.h2`
 export const IdStyled = styled.p`
   font-size: 1rem;
   color: #666;
+  font-weight: 600;
 `;
 
 export const PriceStyled = styled.p`

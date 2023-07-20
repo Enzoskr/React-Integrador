@@ -15,17 +15,17 @@ import {
    SpanStyled,
    UserContainerStyled,
    UserNavStyled,
-  //  SearchIcon,
+  
    
    
    
    
   } from './NavbarStyles'
 
-  import ListNavbar from './ListNavbar/ListNavbar'
+  
   import ModalCart from './Cart/ModalCart'
   import CartIcon from './CartIcon/CartIcon';
-import Search from './Search/Search';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenuHidden } from '../../redux/user/userSlice';
 import { FaUserAlt } from 'react-icons/fa';
@@ -47,8 +47,6 @@ import ModalUser from './user/ModalUser';
       <Link to= '/' >
         <img src={LogoBranding} alt="Logo-marca" />
       </Link>
-      {/* {cualquier cosa que pase lo limpio} */}
-      {/* <LogoContainer src={LogoBranding} alt="Logo-marca" /> */}
     
       <LinksContainerStyled>
        <UserNavStyled>

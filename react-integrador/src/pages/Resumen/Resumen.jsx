@@ -8,7 +8,6 @@ import {
   CostoEnvioStyled,
   CostoProductoStyled,
   CostoTotalStyled,
-  HrStyled,
   ProductsContainerStyled,
   ResumenContainerInfoStyled,
   ResumenContainerStyled,
@@ -38,7 +37,7 @@ const Resumen = () => {
   return (
     <ResumenContainerStyled>
       <ResumenTitleStyled>
-        <h1>Resumen Orden: #{visitedOrder?._id.slice(0,7)}</h1>
+        <h1>Id de compra: #{visitedOrder?._id.slice(0,7)}</h1>
         <Link borderRadius='10' to='/Ordenes'></Link>
       </ResumenTitleStyled>
       <h2>Productos:</h2>
@@ -49,7 +48,7 @@ const Resumen = () => {
           })
         }
       </ProductsContainerStyled>
-      <HrStyled />
+      
       <ResumenContainerInfoStyled>
         <h3>Costos:</h3>
         <CostoProductoStyled>

@@ -6,10 +6,11 @@ import Charger from "../UI/Charger/Charger";
 
 const CardsMisOrdenes = () => {
 
-  const {orders, loading, error
-  } = useSelector(state => state.orders);
+  const {orders, loading, error} = useSelector(state => state.orders);
 
-  if (loading && !orders) { return <Charger styles={{ height: '50px', width: '50px' }} />};
+  if (loading && !orders){ 
+    return <Charger styles={{ height: '50px', width: '50px' }} />
+  };
 
   if (error) {
     return <h3 style={{ textAlign: 'center' }} > {error} </h3>

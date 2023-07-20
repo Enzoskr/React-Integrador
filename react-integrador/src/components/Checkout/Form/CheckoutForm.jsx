@@ -13,15 +13,15 @@ import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm = ({cartItems, price, shippingCost}) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {currentUser} = useSelector(state => state.user)
-  // const navigate = useNavigate()
   return (
     <CheckoutDatosStyled>
       <h2>Ingresa tus datos</h2>
       <Formik
       initialValues={checkoutInitialValues}
       validationSchema={checkoutValidationSchema}
-      onSubmit={async( values) => {
+      onSubmit={ async (values) => {
         const orderData = {
           items : cartItems,
           price,
@@ -32,10 +32,12 @@ const CheckoutForm = ({cartItems, price, shippingCost}) => {
           }
         }
         try{
-          await createOrder(orderData, dispatch, currentUser)
+          await createOrder(orderData, dispatch, currentUser);
+          navigate('/felicitaciones')
           alert(' felicitaciones, tu pedido fue creado con exito')
           dispatch(clearCart())
         } catch (error){
+          console.log(error)
           alert('hubo un error al crear el pedido')
 
         }

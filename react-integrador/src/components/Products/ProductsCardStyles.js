@@ -35,10 +35,7 @@ gap: 20px;
 
 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 transition: all 0.3s ease-in-out;
-&:hover{
-    transform: scale(1.03);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-}
+
 img{
     
     height: 200px;

@@ -1,6 +1,6 @@
  
 import React, { useState } from 'react';
-import { AiOutlineSearch } from 'react-icons/ai'
+
 import {useDispatch, useSelector} from 'react-redux'
 
 
@@ -12,7 +12,7 @@ import {
   HeroTagline,
   SearchText,
   SearchBar,
-  IconStyles,
+  
   SearchAndButton,
  } from './HeroStyles'
 
@@ -68,5 +68,5 @@ const Hero = ({doScroll}) => {
   </HeroContainer>
   )
 }
-// nos quedamos en 1:01:39
+
 export default Hero;

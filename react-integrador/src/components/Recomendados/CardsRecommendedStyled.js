@@ -37,11 +37,7 @@ transition: all 0.3s ease-in-out;
 width: 420px;
 height: 100px;
 
-&:hover img{
-    padding: none;
-    transform: scale(1.1);
 
-}
 `
 
 export const CardImg = styled.img`

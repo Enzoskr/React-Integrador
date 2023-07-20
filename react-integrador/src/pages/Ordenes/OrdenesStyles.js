@@ -13,12 +13,7 @@ export const MisOrdenesTitleStyled = styled.h2`
   text-align: center;
 `;
 
-export const MisOrdenesPatternStyled = styled.img`
-  width: 100%;
-  position: fixed;
-  z-index: -100000000;
-  bottom: -80px;
-`;
+
 
 export const MisOrdenesBtnContainerStyled = styled.div`
   padding-top: 5rem;
